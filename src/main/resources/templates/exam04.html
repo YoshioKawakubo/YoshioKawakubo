@@ -8,9 +8,12 @@
 <h1>ユーザー登録</h1>
 <form action="finished.html"
   th:action="@{/ex04/result}" method="post"
-  th:object="${UserForm}">
+  th:object="${userForm}">
+  <div th:errors="*{name}" style="color:red">エラー！</div>
     名前： <input type="text" name="name" th:field="*{name}"> <br>
+  <div th:errors="*{age}" style="color:red">エラー！ </div>
     年齢： <input type="text" name="age" th:field="*{age}"> <br>
+    <div th:errors="*{comment}" style="color:red">エラー！ </div>
     コメント：<br>
     <textarea rows="3" cols="40" name="comment" th:field="*{comment}"></textarea> <br>
     <button>登録</button>
